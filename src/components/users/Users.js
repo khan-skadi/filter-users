@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import UserList from './UserList';
 import { users } from '../../util/constants';
 import { countries } from '../../util/countries';
-import { sortByAge, sortById } from '../../util/sortList';
+import { sortByAge } from '../../util/sortList';
 
 const Users = () => {
   const [userList, setUserList] = useState(users);
@@ -27,16 +27,12 @@ const Users = () => {
   };
 
   const showCountry = (id) => {
-    const user = userList.find((user) => user.id === id);
-    const list = userList.filter((item) => item.id !== id);
-    // const filteredList = sortById([
-    //   ...list,
-    //   { ...user, showExtraInfo: !user.showExtraInfo }
-    // ])
-    const filteredList = [
-      { ...user, showExtraInfo: !user.showExtraInfo },
-      ...list,
-    ]
+    const filteredList = userList.slice();
+    filteredList.forEach(user => {
+      if (user.id === id) {
+        user.showExtraInfo = !user.showExtraInfo;
+      }
+    })
     setUserList(filteredList);
   };
 
