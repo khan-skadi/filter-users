@@ -1,4 +1,6 @@
-# Filter Functionality for a list of users
+# Filter Functionality for a list of 
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Local Development
 
