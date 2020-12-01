@@ -47,9 +47,6 @@ const Users = () => {
       <section className="user-filter">
         <label htmlFor="input-field">Filter Users by Name</label>
         <input type="text" onChange={(e) => setInputValue(e.target.value)} />
-        <transition name="fade">
-          <span className="user-filter__no-users-found"></span>
-        </transition>
         <button className="filter-button" onClick={handleSort}>
           Sort by Age
         </button>
